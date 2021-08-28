@@ -26,8 +26,6 @@ const cardStackImages = {
 
 
 function CardStack(props) {
-    console.log(props);
-
     const label = (props.name in cardStackImages) ? (
         <img src={cardStackImages[props.name]} alt={"Logo for " + props.name} />
     ) : (
@@ -43,10 +41,9 @@ function CardStack(props) {
 
 
 function Card(props) {
-    console.log(props.data.url.length>0);
   return (
       <div className="project">{props.data.url.length>0 ? (
-          <a href={props.data.url}>
+          <a href={props.data.url} target="_blank">
           {/*<div className="display"><img src={props.data.img} alt="Project screenshot"/></div>*/}
           <label>Title</label><div className="title">{props.data.name}</div>
           <label>Description</label><div className="description">{props.data.description}</div>
@@ -76,10 +73,12 @@ function App() {
         });
   }, []);
 
+  document.title = window.location.hostname;
+
   return (
       <main>
           <div className="header">
-              <h1>baely.co</h1>
+              <h1>{ window.location.hostname }</h1>
           </div>
           <div className="project-list">
               { projects }
