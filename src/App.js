@@ -27,7 +27,7 @@ function CardStack(props) {
     console.log(props);
 
     const label = (props.name in cardStackImages) ? (
-        <img src={cardStackImages[props.name]} />
+        <img src={cardStackImages[props.name]} alt={"Logo for " + props.name} />
     ) : (
         <span>{props.name}</span>
     );
