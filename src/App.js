@@ -18,7 +18,10 @@ const cardStackImages = {
     "react": Icons.iconReact,
     "psql": Icons.iconPsql,
     "azure-function": Icons.iconAzureFunction,
-    "cosmos": Icons.iconCosmosDb
+    "cosmos": Icons.iconCosmosDb,
+    "gh": Icons.iconGithub,
+    "cpp": Icons.iconCpp,
+    "neo4j": Icons.iconNeo4j
 }
 
 
@@ -40,16 +43,25 @@ function CardStack(props) {
 
 
 function Card(props) {
-    console.log(props.data);
+    console.log(props.data.url.length>0);
   return (
-      <div className="project"><a href={props.data.url}>
+      <div className="project">{props.data.url.length>0 ? (
+          <a href={props.data.url}>
           {/*<div className="display"><img src={props.data.img} alt="Project screenshot"/></div>*/}
           <label>Title</label><div className="title">{props.data.name}</div>
           <label>Description</label><div className="description">{props.data.description}</div>
           <label>Stack</label><div className="stack">
               {Object.keys(props.data.stack).map(k => <CardStack name={k} data={props.data.stack[k]} />)}
+          </div></a>
+      ) : (
+          <span className="no-link">
+          <label>Title</label><div className="title">{props.data.name}</div>
+          <label>Description</label><div className="description">{props.data.description}</div>
+          <label>Stack</label><div className="stack">
+      {Object.keys(props.data.stack).map(k => <CardStack name={k} data={props.data.stack[k]} />)}
           </div>
-      </a></div>
+          </span>
+      )}</div>
   );
 }
 

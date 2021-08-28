@@ -13,6 +13,9 @@ import iconCSharp from './c-sharp.svg';
 import iconPsql from './postgresql.svg';
 import iconAzureFunction from './Function-Apps.svg';
 import iconCosmosDb from './Azure-Cosmos-DB.svg';
+import iconGithub from './github-icon.svg';
+import iconCpp from './c-plusplus.svg';
+import iconNeo4j from './neo4j.svg';
 
 export {
     iconPy,
@@ -29,5 +32,8 @@ export {
     iconCSharp,
     iconPsql,
     iconAzureFunction,
-    iconCosmosDb
+    iconCosmosDb,
+    iconGithub,
+    iconCpp,
+    iconNeo4j
 }

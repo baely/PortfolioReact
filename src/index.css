@@ -33,14 +33,14 @@ main {
     transform: scale(1.1);
 }
 
-.project > a {
+.project > a, .project > span.no-link {
     display: block;
     height: calc(100% - 40px);
     padding: 20px;
     width: calc(100% - 40px);
 }
 
-.project > a > div {
+.project > a > div, .project > span.no-link > div {
     margin: 0 10px 10px;
 }
 
