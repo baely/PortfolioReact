@@ -43,7 +43,7 @@ function CardStack(props) {
 function Card(props) {
   return (
       <div className="project">{props.data.url.length>0 ? (
-          <a href={props.data.url} target="_blank">
+          <a href={props.data.url} target="_blank" rel="noreferrer">
           {/*<div className="display"><img src={props.data.img} alt="Project screenshot"/></div>*/}
           <label>Title</label><div className="title">{props.data.name}</div>
           <label>Description</label><div className="description">{props.data.description}</div>
@@ -78,7 +78,7 @@ function App() {
   return (
       <main>
           <div className="header">
-              <h1>{ window.location.hostname }</h1>
+              <h1>{ window.location.hostname }<span className="unbold"> | Portfolio</span></h1>
           </div>
           <div className="project-list">
               { projects }

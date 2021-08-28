@@ -2,6 +2,10 @@ body, html { margin: 0; padding: 0; }
 
 a:link, a:visited, a:hover, a:active { color: inherit; text-decoration: none; }
 
+span.unbold {
+    font-weight: normal;
+}
+
 body {
     background-color: #eee;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -25,7 +29,7 @@ main {
     height: 380px;
     margin: 50px;
     overflow: hidden;
-    transition: 0.2s ease-in-out all;
+    transition: 0.2s ease-in-out transform;
     width: 480px;
 }
 
@@ -91,4 +95,30 @@ main {
     margin: 5px;
     padding: 5px;
     text-transform: uppercase;
+}
+
+@media (min-width: 584px) and (max-width: 1168px) {
+    main {
+        width: 584px;
+    }
+}
+
+@media (max-width: 584px) {
+    main {
+        width: 100vw;
+    }
+
+    .project {
+        height: auto;
+        width: calc(100vw - 100px);
+    }
+
+    .project:hover {
+        transform: scale(1);
+    }
+
+    .project .description {
+        height: auto;
+        overflow-y: hidden;
+    }
 }
