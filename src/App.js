@@ -57,7 +57,7 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("https://baileyportfolio.azurewebsites.net/api/GetProjects")
+    fetch("http://api.baely.co/api/GetProjects")
         .then(res => res.json())
         .then(data => {
             setProjects(data.map(proj => <Card data={proj}/>));
