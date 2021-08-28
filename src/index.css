@@ -13,6 +13,10 @@ main {
     width: 1168px;
 }
 
+.header h1 {
+    margin: 64px 64px 0;
+}
+
 .project {
     background-color: #fff;
     border: 2px solid #ccc;
