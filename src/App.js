@@ -5,38 +5,47 @@ import * as Icons from './images/tech/images';
 
 
 const cardStackImages = {
-    "py": Icons.iconPy,
-    "ng": Icons.iconNg,
-    "aws": Icons.iconAws,
-    "lambda": Icons.iconLambda,
-    "az": Icons.iconAz,
-    "django": Icons.iconDjango,
-    "gcp": Icons.iconGcp,
-    "flask": Icons.iconFlask,
-    "java": Icons.iconJava,
-    ".net": Icons.iconCSharp,
-    "react": Icons.iconReact,
-    "psql": Icons.iconPsql,
-    "azure-function": Icons.iconAzureFunction,
-    "cosmos": Icons.iconCosmosDb,
-    "gh": Icons.iconGithub,
-    "cpp": Icons.iconCpp,
-    "neo4j": Icons.iconNeo4j
+    "py": {"icon": Icons.iconPy, "tooltip": "Python"},
+    "ng": {"icon": Icons.iconNg, "tooltip": "Angular"},
+    "aws": {"icon": Icons.iconAws, "tooltip": "AWS"},
+    "lambda": {"icon": Icons.iconLambda, "tooltip": "AWS Lambda"},
+    "az": {"icon": Icons.iconAz, "tooltip": "Azure"},
+    "django": {"icon": Icons.iconDjango, "tooltip": "Django"},
+    "gcp": {"icon": Icons.iconGcp, "tooltip": "GCP"},
+    "flask": {"icon": Icons.iconFlask, "tooltip": "Flask"},
+    "java": {"icon": Icons.iconJava, "tooltip": "Java"},
+    ".net": {"icon": Icons.iconCSharp, "tooltip": "C# .NET"},
+    "react": {"icon": Icons.iconReact, "tooltip": "React"},
+    "psql": {"icon": Icons.iconPsql, "tooltip": "Postgresql"},
+    "azure-function": {"icon": Icons.iconAzureFunction, "tooltip": "Azure Function"},
+    "cosmos": {"icon": Icons.iconCosmosDb, "tooltip": "Azure Cosmos DB"},
+    "gh": {"icon": Icons.iconGithub, "tooltip": "Github"},
+    "cpp": {"icon": Icons.iconCpp, "tooltip": "C++"},
+    "neo4j": {"icon": Icons.iconNeo4j, "tooltip": "Neo4j"}
+}
+
+
+function HoverText(props) {
+    return (
+        <div className={"hover-text-parent " + props.className}>
+            <div className="hover-text">{props.text}</div>
+            {props.children}
+        </div>
+    );
 }
 
 
 function CardStack(props) {
     const label = (props.name in cardStackImages) ? (
-        <img src={cardStackImages[props.name]} alt={"Logo for " + props.name} />
+        <img src={cardStackImages[props.name].icon} alt={"Logo for " + props.name} title={cardStackImages[props.name].tooltip} />
     ) : (
         <span>{props.name}</span>
     );
 
-    return (
-        <div className="stack-item">
-            { label }
-        </div>
-    );
+    return (<>{ props.data.length === 0 ?
+        <div className="stack-item">{label}</div> :
+        <HoverText className="stack-item" text={props.data}>{label}</HoverText>
+    }</>);
 }
 
 

@@ -28,7 +28,7 @@ main {
     display: inline-block;
     height: 380px;
     margin: 50px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     transition: 0.2s ease-in-out transform;
     width: 480px;
 }
@@ -70,7 +70,6 @@ main {
 
 .project .description {
     height: 60px;
-    overflow-y: scroll;
 }
 
 .project .stack-item {
@@ -95,6 +94,22 @@ main {
     margin: 5px;
     padding: 5px;
     text-transform: uppercase;
+}
+
+.hover-text-parent .hover-text {
+    background-color: #666;
+    border-radius: 5px;
+    color: #fff;
+    display: none;
+    max-width: 180px;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-32px, 72px);
+    z-index: 10;
+}
+
+.hover-text-parent:hover .hover-text {
+    display: inline-block;
 }
 
 @media (min-width: 584px) and (max-width: 1168px) {
