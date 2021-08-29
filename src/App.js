@@ -53,7 +53,7 @@ function CardStack(props) {
 function Card(props) {
     props.data.url = props.data.id === "portfolio" ? window.location.href : props.data.url;
 
-    const cards = Object.keys(props.data.stack).sort().map(k => <CardStack name={k} data={props.data.stack[k]} />);
+    const cards = Object.keys(props.data.stack).map(k => <CardStack name={k} data={props.data.stack[k]} />);
 
   return (
       <div className="project">{props.data.url.length>0 ? (
