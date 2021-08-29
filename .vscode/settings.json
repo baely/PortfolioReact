@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/94edc077-d3e6-4720-b0db-809c1aaf7ef3/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/baileysportfolio",
-    "appService.deploySubpath": "."
-}
