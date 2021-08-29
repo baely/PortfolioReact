@@ -53,6 +53,8 @@ function CardStack(props) {
 function Card(props) {
     props.data.url = props.data.id === "portfolio" ? window.location.href : props.data.url;
 
+    const cards = Object.keys(props.data.stack).sort().map(k => <CardStack name={k} data={props.data.stack[k]} />);
+
   return (
       <div className="project">{props.data.url.length>0 ? (
           <a href={props.data.url} target="_blank" rel="noreferrer">
@@ -60,14 +62,14 @@ function Card(props) {
           <label>Title</label><div className="title">{props.data.name}</div>
           <label>Description</label><div className="description">{props.data.description}</div>
           <label>Stack</label><div className="stack">
-              {Object.keys(props.data.stack).map(k => <CardStack name={k} data={props.data.stack[k]} />)}
+              {cards}
           </div></a>
       ) : (
           <span className="no-link">
           <label>Title</label><div className="title">{props.data.name}</div>
           <label>Description</label><div className="description">{props.data.description}</div>
           <label>Stack</label><div className="stack">
-      {Object.keys(props.data.stack).map(k => <CardStack name={k} data={props.data.stack[k]} />)}
+      {cards}
           </div>
           </span>
       )}</div>
@@ -81,7 +83,7 @@ function App() {
     fetch("//baileyportfolio.azurewebsites.net/api/GetProjects")
         .then(res => res.json())
         .then(data => {
-            setProjects(data.map(proj => <Card data={proj}/>));
+            setProjects(data.map(proj => <Card key={proj.id} data={proj}/>));
         });
   }, []);
 

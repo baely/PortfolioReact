@@ -26,11 +26,12 @@ main {
     border: 2px solid #ccc;
     border-radius: 5px;
     display: inline-block;
-    height: 380px;
+    min-height: 380px;
     margin: 50px;
     /*overflow: hidden;*/
     transition: 0.2s ease-in-out transform;
     width: 480px;
+    vertical-align: top;
 }
 
 .project:hover {
