@@ -41,6 +41,8 @@ function CardStack(props) {
 
 
 function Card(props) {
+    props.data.url = props.data.id === "portfolio" ? window.location.href : props.data.url;
+
   return (
       <div className="project">{props.data.url.length>0 ? (
           <a href={props.data.url} target="_blank" rel="noreferrer">
