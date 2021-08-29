@@ -21,7 +21,8 @@ const cardStackImages = {
     "cosmos": {"icon": Icons.iconCosmosDb, "tooltip": "Azure Cosmos DB"},
     "gh": {"icon": Icons.iconGithub, "tooltip": "Github"},
     "cpp": {"icon": Icons.iconCpp, "tooltip": "C++"},
-    "neo4j": {"icon": Icons.iconNeo4j, "tooltip": "Neo4j"}
+    "neo4j": {"icon": Icons.iconNeo4j, "tooltip": "Neo4j"},
+    "discord": {"icon": Icons.iconDiscord, "tooltip": "Discord"}
 }
 
 

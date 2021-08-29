@@ -16,6 +16,7 @@ import iconCosmosDb from './Azure-Cosmos-DB.svg';
 import iconGithub from './github-icon.svg';
 import iconCpp from './c-plusplus.svg';
 import iconNeo4j from './neo4j.svg';
+import iconDiscord from './discord-icon.svg';
 
 export {
     iconPy,
@@ -35,5 +36,6 @@ export {
     iconCosmosDb,
     iconGithub,
     iconCpp,
-    iconNeo4j
+    iconNeo4j,
+    iconDiscord
 }
